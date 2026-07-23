@@ -1,115 +1,125 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-html {
-  scroll-behavior: smooth;
+/* Custom CSS variables */
+:root {
+  --color-navy: #001f3f;
+  --color-navy-light: #003d5c;
+  --color-navy-dark: #000d1f;
+  --color-accent: #00d4ff;
+  --color-slate: #64748b;
+  --color-slate-light: #cbd5e1;
 }
 
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f8fafc;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
-}
-
-/* Smooth transitions */
-* {
-  @apply transition-colors duration-200;
-}
-
-/* Focus styles for accessibility */
-:focus-visible {
-  @apply outline-2 outline-offset-2 outline-accent;
-}
-
-/* Typography */
+/* Typography utilities */
 @layer components {
   .text-display-xl {
-    @apply text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight;
+    @apply text-6xl md:text-7xl font-bold leading-tight;
   }
 
   .text-display-lg {
-    @apply text-4xl md:text-5xl font-bold tracking-tight;
+    @apply text-5xl md:text-6xl font-bold leading-tight;
   }
 
   .text-display-md {
-    @apply text-3xl md:text-4xl font-bold tracking-tight;
-  }
-
-  .text-heading-xl {
-    @apply text-3xl md:text-4xl font-bold;
+    @apply text-4xl md:text-5xl font-bold leading-tight;
   }
 
   .text-heading-lg {
-    @apply text-2xl md:text-3xl font-bold;
+    @apply text-3xl font-bold;
   }
 
   .text-heading-md {
-    @apply text-xl md:text-2xl font-semibold;
+    @apply text-2xl font-bold;
   }
 
-  .text-body-lg {
-    @apply text-lg text-slate leading-relaxed;
+  .text-heading-sm {
+    @apply text-xl font-bold;
   }
 
-  .text-body-base {
-    @apply text-base text-slate leading-relaxed;
-  }
-
-  .text-body-sm {
-    @apply text-sm text-slate-light leading-relaxed;
-  }
-
-  /* Buttons */
-  .btn-primary {
-    @apply inline-flex items-center justify-center px-8 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-dark transition-colors duration-200;
-  }
-
-  .btn-primary-outline {
-    @apply inline-flex items-center justify-center px-8 py-3 border-2 border-accent text-accent font-semibold rounded-lg hover:bg-accent hover:text-white transition-colors duration-200;
-  }
-
-  .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-2 bg-slate/10 text-slate font-medium rounded-lg hover:bg-slate/20 transition-colors duration-200;
-  }
-
-  /* Cards */
-  .card {
-    @apply bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate/5;
-  }
-
-  .card-dark {
-    @apply bg-slate/5 rounded-xl shadow-sm border border-slate/10;
-  }
-
-  /* Container */
+  /* Container utilities */
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 md:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-4 md:px-8;
   }
 
   /* Section spacing */
   .section-spacing {
-    @apply py-16 md:py-20 lg:py-24;
+    @apply py-20 md:py-32;
   }
 
-  .section-spacing-sm {
-    @apply py-12 md:py-16;
+  /* Button utilities */
+  .btn-primary {
+    @apply px-8 py-3 bg-accent text-navy font-semibold rounded-lg hover:bg-accent/90 transition-all duration-300 hover:shadow-lg;
   }
+
+  .btn-primary-outline {
+    @apply px-8 py-3 border-2 border-accent text-accent font-semibold rounded-lg hover:bg-accent/10 transition-all duration-300;
+  }
+
+  /* Color utilities */
+  .text-navy {
+    @apply text-[--color-navy];
+  }
+
+  .bg-navy {
+    @apply bg-[--color-navy];
+  }
+
+  .bg-navy-light {
+    @apply bg-[--color-navy-light];
+  }
+
+  .bg-navy-dark {
+    @apply bg-[--color-navy-dark];
+  }
+
+  .text-accent {
+    @apply text-[--color-accent];
+  }
+
+  .bg-accent {
+    @apply bg-[--color-accent];
+  }
+
+  .text-slate {
+    @apply text-[--color-slate];
+  }
+
+  .text-slate-light {
+    @apply text-[--color-slate-light];
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove default button styling */
+button {
+  @apply cursor-pointer;
+}
+
+/* Input styling */
+input,
+textarea,
+select {
+  @apply w-full;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
 }
