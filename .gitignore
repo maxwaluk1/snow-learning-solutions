@@ -1,15 +1,17 @@
 # Dependencies
 node_modules/
-.pnp
+/.pnp
 .pnp.js
 
 # Testing
-coverage/
+/coverage
 
 # Next.js
-.next/
-out/
-build/
+/.next/
+/out/
+
+# Production
+/build
 
 # Misc
 .DS_Store
@@ -21,35 +23,11 @@ yarn-debug.log*
 yarn-error.log*
 
 # Local env files
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env*.local
 
-# IDEs
-.idea/
-.vscode/
-*.swp
-*.swo
-*~
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+# Vercel
+.vercel
 
-# IDE - VS Code specific extensions
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-
-# Yarn
-.yarn/cache
-.yarn/unplugged
-.yarn/build-state.yml
-.yarn/install-state.gz
-.pnp.*
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
