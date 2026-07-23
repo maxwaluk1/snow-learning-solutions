@@ -1,19 +1,25 @@
 import type { Metadata } from 'next';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import ServicesHero from '@/components/sections/ServicesHero';
-import ServicesGrid from '@/components/sections/ServicesGrid';
-import ServiceCTA from '@/components/sections/ServiceCTA';
+import Services from '@/components/sections/Services';
+import Expertise from '@/components/sections/Expertise';
+import CTA from '@/components/sections/CTA';
 
 export const metadata: Metadata = {
   title: 'Services | Snow Learning Solutions',
-  description: 'Explore our instructional design, SCORM development, LMS consulting, and learning strategy services.',
+  description: 'Comprehensive learning solutions including instructional design, SCORM development, and LMS consulting.',
 };
 
-export default function Services() {
+export default function ServicesPage() {
   return (
     <>
+      <Navigation />
       <ServicesHero />
-      <ServicesGrid />
-      <ServiceCTA />
+      <Services />
+      <Expertise />
+      <CTA />
+      <Footer />
     </>
   );
 }
