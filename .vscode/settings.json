@@ -1,0 +1,13 @@
+{
+  "name": "Snow Learning Solutions",
+  "version": "1.0.0",
+  "description": "Enterprise learning solutions website",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\""
+  }
+}
